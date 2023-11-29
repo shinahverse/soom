@@ -55,11 +55,15 @@ function handleRoomSubmit(event){
 
 form.addEventListener("submit", handleRoomSubmit);
 
-socket.on("welcome", (userNickname)=>{
+socket.on("welcome", (userNickname, newCount)=>{
+    const h3 = room.querySelector("h3");
+    h3.innerText = `Room ${roomName}(${newCount})`;
     addMessage(`${userNickname}이(가) 입장했습니다.`);
 });
 
-socket.on("bye", (userNickname)=>{
+socket.on("bye", (userNickname, newCount)=>{
+    const h3 = room.querySelector("h3");
+    h3.innerText = `Room ${roomName}(${newCount})`;
     addMessage(`${userNickname}이(가) 퇴장했습니다.`);
 });
 
