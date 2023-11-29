@@ -10,11 +10,5 @@ html(lan="en")
         header  
             h1 SOOM 
         main
-            form#nick 
-                input(type="text", placeholder="닉네임", required)
-                button 저장
-            ul
-            form#message
-                input(type="text", placeholder="메시지를 적어 주세요", required) 
-                button 보내기
+        script(src="/socket.io/socket.io.js")
         script(src="/public/js/app.js") 

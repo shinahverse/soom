@@ -1,4 +1,5 @@
 import http from "http";
+import SocketIO from "socket.io";
 import express from 'express';
 
 const app = express();
@@ -9,7 +10,8 @@ app.use("/public", express.static(__dirname+"/public"));
 app.get("/", (req, res) => res.render("home"));
 app.get("/*", (req, res) => res.redirect("/"));
 
-const server = http.createServer(app);
+const httpServer = http.createServer(app);
+const wsServer = SocketIO(httpServer);
 
 const handleListen = ()=> console.log("listening on http://localhost:3000");
-server.listen(3000, handleListen);
+httpServer.listen(3000, handleListen);
