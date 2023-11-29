@@ -18,7 +18,10 @@ html(lan="en")
             div#room 
                 h3
                 ul 
-                form
+                form#name
+                    input(placeholder="nickname", required, type="text")
+                    button 저장
+                form#msg
                     input(placeholder="message", required, type="text")
                     button 보내기
         script(src="/socket.io/socket.io.js")
