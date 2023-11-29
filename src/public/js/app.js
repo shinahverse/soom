@@ -31,7 +31,7 @@ function showRoom(){
     const h3 = room.querySelector("h3");
     h3.innerText = `이 방의 이름은 ${roomName}`;
     const form = room.querySelector("form");
-    form.addEventListener("submit", handleMessageSubmit)
+    form.addEventListener("submit", handleMessageSubmit);
 }
 
 function handleRoomSubmit(event){
